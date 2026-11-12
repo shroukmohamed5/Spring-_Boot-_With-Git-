@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:taskflow;DB_CLOSE_DELAY=-1}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+
+app:
+  jwt:
+    # Base64 secret (>= 256 bits). Override with the JWT_SECRET env var in production.
+    secret: ${JWT_SECRET:bpxkmEIHkst1VxXs/+910nLAGxLmvT4benIZ9bldVkKARHyAkLdxHnPSgC4cPLKO}
+    expiration-ms: 86400000
